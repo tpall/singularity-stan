@@ -10,7 +10,7 @@ From: tpall/singularity-tidyverse
 %post
 # Install software properties and libudunits2-dev
   apt-get update \
-     && apt-get install -y --no-install-recommends software-properties-common libudunits2-dev
+     && apt-get install -y --no-install-recommends libudunits2-dev
 
 # Install rstan  
   apt-get update -qq \
