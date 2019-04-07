@@ -5,7 +5,7 @@ From: tpall/singularity-tidyverse
   Maintainer tpall
 
 %help
-  This will run rstan on top of RStudio Server, tidyverse + some other packages
+  This will run rstan and brms on top of RStudio Server, tidyverse + some other packages
 
 %post
   apt-get update \
@@ -15,11 +15,5 @@ From: tpall/singularity-tidyverse
 
 # Install rstan
   install2.r --error --deps TRUE \
-  	rstan \
-	loo \
-	bayesplot \
-  	rstanarm \
-  	rstantools \
-  	shinystan \
-  	ggmcmc \
+  	brms \
   	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
