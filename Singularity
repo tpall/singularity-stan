@@ -13,9 +13,7 @@ From: tpall/singularity-tidyverse
      && apt-get install -y --no-install-recommends software-properties-common libudunits2-dev
 
 # Install rstan  
-  add-apt-repository -y "ppa:marutter/rrutter" \
-     && add-apt-repository -y "ppa:marutter/c2d4u" \
-     && apt-get update \
+  apt-get update -qq \
      && apt-get install -y --no-install-recommends r-cran-rstan \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/
@@ -25,6 +23,6 @@ From: tpall/singularity-tidyverse
      && echo "CXX14FLAGS=-O3 -march=native -mtune=native -fPIC\nCXX14=g++\n" >> $HOME/.R/Makevars
 
 # Install brms
-  install2.r --error --deps TRUE \
-     brms \
-     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+#  install2.r --error --deps TRUE \
+#     brms \
+#     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
