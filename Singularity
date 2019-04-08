@@ -13,7 +13,7 @@ From: tpall/singularity-tidyverse
      && apt-get install -y --no-install-recommends libudunits2-dev
 
 # Install rstan  
-  install2.r --error --deps TRUE --source TRUE \
+  install2.r --error --deps TRUE \
      rstan \
      && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
