@@ -15,10 +15,9 @@ From: tpall/singularity-r:3.6.3
     libudunits2-dev \
     libcurl4-openssl-dev \
     libssl-dev \
-    libgdal-dev
-
-# Install rstan  
-  install2.r --error --deps TRUE \
+    libgdal-dev \
+    && install2.r --error \
+    --deps TRUE \
     --skipinstalled \
     rstan \
     brms \

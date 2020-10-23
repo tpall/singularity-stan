@@ -17,10 +17,9 @@ From: tpall/singularity-r:4.0.3
     libssl-dev \
     libgdal-dev \
     libgsl-dev \
-    libnode-dev
-
-# Install rstan  
-  install2.r --error --deps TRUE \
+    libnode-dev \
+    && install2.r --error \
+    --deps TRUE \
     --skipinstalled \
     rstan \
     brms \
