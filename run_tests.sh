@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export SINGULARITY_IMAGE="${SINGULARITY_IMAGE:-rstan.simg}"
+export SINGULARITY_IMAGE="${SINGULARITY_IMAGE:-container.sif}"
 echo "Using Singularity image: ${SINGULARITY_IMAGE}"
 
 set -e
