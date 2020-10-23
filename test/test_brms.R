@@ -25,6 +25,6 @@ fit <- brm(
     set_prior("normal(0,3)", dpar = "sigma"),
   sample_prior = TRUE, 
   warmup = warmup, iter = iter, chains = chains,
-  stan_model_args = stan_model_args, rename = FALSE
+  stan_model_args = stan_model_args
 )
 print(fit)
