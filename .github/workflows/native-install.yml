@@ -2,8 +2,8 @@ name: Singularity Build (native)
 on: [push]
 jobs:
 
-  build:
-    name: Build
+  setup:
+    name: Setup
     runs-on: ubuntu-18.04
     steps:
 
@@ -43,19 +43,20 @@ jobs:
     - name: Check out code for the container build
       uses: actions/checkout@v1
 
-    - name: Build Container
-      strategy:
-        matrix:
-          recipe: [ "", ".3.6.3"]
-      env:
-        SINGULARITY_RECIPE: Singularity${{recipe}}
-        OUTPUT_CONTAINER: container.sif
-      run: |
-       ls 
-       if [ -f "${SINGULARITY_RECIPE}" ]; then
-            sudo -E singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
-       else
-           echo "${SINGULARITY_RECIPE} is not found."
-           echo "Present working directory: $PWD"
-           ls
-       fi
+  build:
+    name: Build
+    needs: setup
+    steps: 
+        - name: Build Container
+          env:
+            SINGULARITY_RECIPE: Singularity
+            OUTPUT_CONTAINER: container.sif
+          run: |
+           ls 
+           if [ -f "${SINGULARITY_RECIPE}" ]; then
+                sudo -E singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
+           else
+               echo "${SINGULARITY_RECIPE} is not found."
+               echo "Present working directory: $PWD"
+               ls
+           fi
