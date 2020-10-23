@@ -5,10 +5,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        recipe: [ , .3.6.3]
-    
     steps:
 
     - name: Set up Go 1.12
@@ -49,7 +45,7 @@ jobs:
 
     - name: Build Container
       env:
-        SINGULARITY_RECIPE: Singularity${{recipe}}
+        SINGULARITY_RECIPE: Singularity.3.6.3
         OUTPUT_CONTAINER: container.sif
       run: |
        ls 
