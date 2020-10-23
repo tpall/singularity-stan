@@ -15,7 +15,9 @@ From: tpall/singularity-r:4.0.3
     libudunits2-dev \
     libcurl4-openssl-dev \
     libssl-dev \
-    libgdal-dev
+    libgdal-dev \
+    libgsl-dev \
+    libnode-dev
 
 # Install rstan  
   install2.r --error --deps TRUE \
