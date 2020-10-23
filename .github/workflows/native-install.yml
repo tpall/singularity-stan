@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        recipe: ["Singularity", "Singularity.4.0.3","Singularity.3.6.3"]
+        recipe: ["Singularity", "Singularity.4.0.3", "Singularity.3.6.3"]
+      fail-fast: false
     steps:
 
     - name: Set up Go 1.12
