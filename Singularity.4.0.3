@@ -18,5 +18,5 @@ From: tpall/singularity-r:4.0.3
     libgdal-dev \
     libgsl-dev \
     libnode-dev \
-    && Rscript -e "install.packages(c('rstan', 'brms'), dependencies = c('Depends', 'Imports', 'LinkingTo')" \
+    && Rscript -e "install.packages(c('rstan', 'brms'), dependencies = c('Depends', 'Imports', 'LinkingTo'))" \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
